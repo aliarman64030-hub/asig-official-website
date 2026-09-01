@@ -1,252 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Book Publishing &amp; KDP Desk | ASIG</title>
-    <meta name="description" content="End-to-end self-publishing support for authors - Amazon KDP setup, manuscript editing, 6x9 interior formatting, and cover design by Ali Sovereign Insights Group.">
-    
-    <!-- Open Graph Social Media Preview Tags -->
-    <meta property="og:title" content="ASIG Publishing Desk - Global Book Publishing Services">
-    <meta property="og:description" content="Publish your book globally on Amazon KDP (Kindle &amp; Paperback). Professional editing, interior formatting, and cover design.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
-    <meta property="og:type" content="website">
-
-    <!-- Browser Tab Icon (Favicon) -->
-    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/shield-halved.svg" type="image/svg+xml">
-
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
-        body { background-color: #0d1117; color: #c9d1d9; line-height: 1.6; overflow-x: hidden; }
-        
-        /* Header & Navigation */
-        header { background: rgba(22, 27, 34, 0.95); padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #30363d; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(8px); flex-wrap: wrap; gap: 15px; }
-        .logo { font-size: 22px; font-weight: bold; color: #58a6ff; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        nav { display: flex; flex-wrap: wrap; gap: 15px; }
-        nav a { color: #c9d1d9; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 14px; }
-        nav a:hover, nav a.active { color: #ff9900; }
-
-        /* Hero Section */
-        .hero { text-align: center; padding: 80px 20px 60px 20px; background: radial-gradient(circle at top, #2d1f0d 0%, #0d1117 80%); }
-        .hero h1 { font-size: 36px; color: #ffffff; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
-        .hero p { font-size: 16px; color: #8b949e; max-width: 800px; margin: 0 auto 30px auto; }
-        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn { background-color: #ff9900; color: #111; padding: 13px 26px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
-        .btn:hover { background-color: #e68a00; transform: translateY(-2px); }
-
-        /* General Container */
-        .container { padding: 60px 8%; }
-        .section-title { text-align: center; font-size: 28px; color: #ffffff; margin-bottom: 10px; }
-        .section-subtitle { text-align: center; color: #8b949e; margin-bottom: 40px; font-size: 14px; max-width: 750px; margin-left: auto; margin-right: auto; }
-
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 25px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: #ff9900; box-shadow: 0 8px 20px rgba(255, 153, 0, 0.15); }
-        .card-icon { font-size: 32px; color: #ff9900; margin-bottom: 15px; }
-        .card h3 { color: #ffffff; margin-bottom: 10px; font-size: 18px; }
-        .card p { color: #8b949e; font-size: 13px; margin-bottom: 15px; line-height: 1.5; }
-        .card-list { list-style: none; padding: 0; }
-        .card-list li { color: #c9d1d9; font-size: 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .card-list li::before { content: "✓"; color: #ff9900; font-weight: bold; }
-
-        /* Workflow Steps */
-        .workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
-        .step-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; text-align: center; position: relative; }
-        .step-number { width: 40px; height: 40px; background: #ff990022; color: #ff9900; border: 1px solid #ff9900; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 15px auto; }
-        .step-box h4 { color: #ffffff; font-size: 16px; margin-bottom: 8px; }
-        .step-box p { font-size: 12px; color: #8b949e; }
-
-        /* Form Container */
-        .form-container { background: #161b22; border: 1px solid #30363d; padding: 35px; border-radius: 12px; max-width: 800px; margin: 0 auto; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 12px; color: #8b949e; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 11px; background: #0d1117; border: 1px solid #30363d; border-radius: 6px; color: white; font-size: 13px; outline: none; }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: #ff9900; }
-
-        footer { text-align: center; padding: 25px; background: #0d1117; border-top: 1px solid #21262d; font-size: 13px; color: #8b949e; }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; }
-            nav { justify-content: center; }
-            .hero h1 { font-size: 26px; }
-            .container { padding: 40px 5%; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publishing Services | ASIG</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+    header { background: #1a252f; color: #fff; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: #ecf0f1; text-decoration: none; margin-left: 1.5rem; }
+    .container { max-width: 900px; margin: 3rem auto; padding: 0 1rem; background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    h2 { color: #2c3e50; margin-bottom: 1.5rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 2rem; }
+    li { margin-bottom: 0.5rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; margin-bottom: 0.4rem; font-weight: 600; }
+    input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #2c3e50; color: #fff; border: none; padding: 0.8rem 1.5rem; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+    button:hover { background: #34495e; }
+    footer { background: #1a252f; color: #bdc3c7; text-align: center; padding: 2rem 1rem; margin-top: 4rem; }
+  </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> ASIG</a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="publishing.html" class="active"><i class="fa-brands fa-amazon"></i> Publishing Desk</a>
-            <a href="https://www.amazon.com/author/armanali" target="_blank" style="color: #ff9900;"><i class="fa-solid fa-user-pen"></i> Founder Profile</a>
-            <a href="#pub-form">Publish Your Book</a>
-        </nav>
-    </header>
+  <header>
+    <h1>ASIG Publishing</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="publishing.html">Publishing</a>
+      <a href="careers.html">Careers</a>
+      <a href="audits.html">Security Audits</a>
+      <a href="privacy.html">Legal & Privacy</a>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <span style="display: inline-block; background: #ff990022; color: #ff9900; border: 1px solid #ff9900; padding: 5px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 15px; font-weight: bold;">ASIG Global Publishing Solutions</span>
-        <h1>Turn Your Manuscript Into a Published Book</h1>
-        <p>Complete self-publishing setup for Amazon KDP (Kindle &amp; Paperback). We handle formatting, cover design, pricing strategy, and worldwide distribution.</p>
-        <div class="btn-group">
-            <a href="#pub-form" class="btn"><i class="fa-solid fa-book-open"></i> Submit Manuscript Request</a>
-            <a href="https://www.amazon.com/author/armanali" target="_blank" class="btn" style="background-color: #238636; color: white;"><i class="fa-brands fa-amazon"></i> Visit Arman Ali on Amazon</a>
-        </div>
-    </section>
+  <div class="container">
+    <h2>Book Publishing & KDP Consultancy</h2>
+    <p>ASIG provides complete manuscript lifecycle assistance for independent authors and corporate entities worldwide.</p>
+    
+    <br>
+    <h3>Core Publishing Services</h3>
+    <ul>
+      <li><strong>Manuscript Formatting:</strong> Professional Kindle (KDP), Paperback, and Hardcover interior layout design.</li>
+      <li><strong>Proofreading & Editing:</strong> Multi-pass grammar, syntax, and narrative flow verification in English and Hindi.</li>
+      <li><strong>Metadata & SEO Management:</strong> Category placement, keyword analysis, and Amazon Author Central optimization.</li>
+      <li><strong>Rights & Distribution:</strong> Assistance with copyright registration guidelines and global distribution setups.</li>
+    </ul>
 
-    <!-- Detailed Publishing Services -->
-    <section class="container">
-        <h2 class="section-title">End-to-End Publishing Solutions</h2>
-        <p class="section-subtitle">Professional publishing assistance built for aspiring authors, researchers, and corporate writers.</p>
+    <hr><br>
+    <h3>Submit Your Publishing Inquiry</h3>
+    <p style="margin-bottom: 1rem; color: #666;">Fill out the form below and our editorial team will get back to you within 24 hours.</p>
 
-        <div class="services-grid">
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                <h3>Proofreading &amp; Editing</h3>
-                <p>Ensure your manuscript is free from grammatical errors, typos, and syntax mistakes before going live.</p>
-                <ul class="card-list">
-                    <li>Line-by-line grammar checking</li>
-                    <li>Structural flow improvement</li>
-                    <li>Plagiarism &amp; AI-content checks</li>
-                </ul>
-            </div>
+    <form action="https://formsubmit.co/aliarman64030@gmail.com" method="POST">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required placeholder="Enter your email address">
+      </div>
+      <div class="form-group">
+        <label>Manuscript Title / Genre</label>
+        <input type="text" name="title" required placeholder="e.g., Non-Fiction / Fiction">
+      </div>
+      <div class="form-group">
+        <label>Project Details / Requirements</label>
+        <textarea name="message" rows="5" required placeholder="Describe what services you require..."></textarea>
+      </div>
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </div>
 
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-file-word"></i></div>
-                <h3>Interior Formatting (KDP Standard)</h3>
-                <p>Professional interior layout design conforming to Amazon Kindle and Paperback requirements.</p>
-                <ul class="card-list">
-                    <li>Standard 6×9 inches / Custom Trim sizes</li>
-                    <li>Gutter margins, headers, and page numbering</li>
-                    <li>Clickable Table of Contents for Kindle eBook</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
-                <h3>Cover Design (300 DPI)</h3>
-                <p>Eye-catching front, spine, and back cover designs tailored to your genre and book dimension specifications.</p>
-                <ul class="card-list">
-                    <li>High-resolution print-ready PDF</li>
-                    <li>Spine width calculation based on page count</li>
-                    <li>3D mockup graphics for marketing</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div class="card-icon"><i class="fa-brands fa-amazon"></i></div>
-                <h3>Amazon KDP Account &amp; Listing</h3>
-                <p>Complete setup of your Amazon Author Central profile, metadata keywords, categories, and ISBN assignment.</p>
-                <ul class="card-list">
-                    <li>SEO-optimized book description</li>
-                    <li>Royalty structure optimization (up to 70%)</li>
-                    <li>Global marketplace distribution (US, UK, IN, etc.)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow Section -->
-    <section class="container" style="background: #11161d;">
-        <h2 class="section-title">How Our Publishing Desk Works</h2>
-        <p class="section-subtitle">From raw manuscript to live Amazon product in 4 simple steps.</p>
-
-        <div class="workflow-grid">
-            <div class="step-box">
-                <div class="step-number">1</div>
-                <h4>Submit Draft</h4>
-                <p>Send your completed or partial Word document / manuscript via our inquiry desk.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-number">2</div>
-                <h4>Formatting &amp; Design</h4>
-                <p>Our editing desk formats your text, designs the cover, and prepares print-ready files.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-number">3</div>
-                <h4>Review &amp; Approve</h4>
-                <p>You review the digital proofs (interior PDF and cover) and give your final approval.</p>
-            </div>
-            <div class="step-box">
-                <div class="step-number">4</div>
-                <h4>Global Publish</h4>
-                <p>We upload and publish your book on Amazon KDP. Your book is live worldwide!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Author Consultation Form -->
-    <section class="container" id="pub-form">
-        <h2 class="section-title">Publish Your Book With ASIG</h2>
-        <p class="section-subtitle">Fill out the form below to receive a free publishing estimate and consultation.</p>
-
-        <div class="form-container">
-            <form action="https://formsubmit.co/aliarman64030@gmail.com" method="POST">
-                <input type="hidden" name="_cc" value="aglbacshhussen@gmail.com">
-                <input type="hidden" name="_subject" value="New Book Publishing Project - ASIG Publishing Desk">
-                <input type="hidden" name="_captcha" value="false">
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
-                    <div class="form-group">
-                        <label for="authorName">Author Full Name</label>
-                        <input type="text" id="authorName" name="Author Name" placeholder="Your Name or Pen Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="authorEmail">Email Address</label>
-                        <input type="email" id="authorEmail" name="Author Email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="authorPhone">Phone / WhatsApp Number</label>
-                        <input type="tel" id="authorPhone" name="Author Phone" placeholder="Contact Number" required>
-                    </div>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
-                    <div class="form-group">
-                        <label for="bookTitle">Book Title / Working Name</label>
-                        <input type="text" id="bookTitle" name="Book Title" placeholder="Enter Book Title" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="bookGenre">Genre / Category</label>
-                        <select id="bookGenre" name="Book Genre" required>
-                            <option value="">Select Genre</option>
-                            <option value="Non-Fiction / Self-Help">Non-Fiction / Self-Help</option>
-                            <option value="Fiction / Novel">Fiction / Novel</option>
-                            <option value="Academic / Business Guide">Academic / Business Guide</option>
-                            <option value="Poetry / Literature">Poetry / Literature</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="manuscriptStatus">Manuscript Status</label>
-                        <select id="manuscriptStatus" name="Manuscript Status" required>
-                            <option value="">Select Status</option>
-                            <option value="Fully Ready (Word / PDF)">Fully Ready (Word / PDF)</option>
-                            <option value="Drafting in Progress">Drafting in Progress</option>
-                            <option value="Idea Phase Only">Idea Phase Only</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="projectDetails">Specific Requirements (e.g. Cover Design, Formatting, Full Publishing package)</label>
-                    <textarea id="projectDetails" name="Project Details" rows="4" placeholder="Mention page count, target launch date, or specific services needed..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Submit Publishing Request</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 ALI SOVEREIGN INSIGHTS GROUP (ASIG). All Rights Reserved.</p>
-        <p style="font-size: 12px; margin-top: 5px; color: #ff9900;">ASIG Global Publishing Desk | Managed by Arman Ali</p>
-    </footer>
+  <footer>
+    <p>&copy; 2026 Ali Sovereign Insights Group (ASIG). MSME Registered Udyam No: UDYAM-I-UP-47-6427138</p>
+  </footer>
 
 </body>
 </html>
