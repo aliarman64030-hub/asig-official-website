@@ -1,130 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali Sovereign Insights Group (ASIG) | Corporate Services</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: #0f172a; color: #f1f5f9; line-height: 1.6; }
-    
-    header { background: #1e293b; color: #fff; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; position: sticky; top: 0; z-index: 1000; }
-    header h1 { font-size: 1.4rem; color: #38bdf8; letter-spacing: 0.5px; }
-    nav a { color: #cbd5e1; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.3s ease; }
-    nav a:hover { color: #38bdf8; }
-    
-    .hero { background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: #fff; text-align: center; padding: 6rem 1rem; border-bottom: 1px solid #334155; }
-    .hero h2 { font-size: 2.6rem; margin-bottom: 1rem; color: #f8fafc; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-    .hero p { font-size: 1.2rem; max-width: 750px; margin: 0 auto 2rem; color: #94a3b8; }
-    
-    .container { max-width: 1100px; margin: 3rem auto; padding: 0 1rem; }
-    
-    .badge-box { background: rgba(56, 189, 248, 0.08); border: 1px solid #0284c7; border-left: 5px solid #38bdf8; padding: 1.2rem; margin-bottom: 2.5rem; border-radius: 6px; color: #e0f2fe; }
-    .badge-box code { background: #0284c7; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.95rem; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIG | Elite Management Consultancy & Publishing</title>
+    <style>
+        :root {
+            --bg-color: #05080f;
+            --card-bg: rgba(13, 19, 34, 0.92);
+            --card-hover: rgba(19, 28, 49, 0.98);
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #e2c27c;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: rgba(197, 160, 89, 0.25);
+            --border-glow: rgba(197, 160, 89, 0.5);
+        }
 
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
-    .card { background: #1e293b; padding: 2rem; border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); border: 1px solid #334155; border-top: 4px solid #38bdf8; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
-    .card h3 { margin-bottom: 1rem; color: #f8fafc; font-size: 1.3rem; }
-    .card p { color: #94a3b8; font-size: 0.98rem; }
-    .card a { display: inline-block; margin-top: 1.5rem; color: #38bdf8; font-weight: 600; text-decoration: none; }
-    .card a:hover { text-decoration: underline; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    .contact-section { background: #1e293b; padding: 2.5rem; border-radius: 8px; border: 1px solid #334155; margin-top: 3rem; }
-    .contact-section h2 { color: #f8fafc; margin-bottom: 1rem; border-bottom: 2px solid #38bdf8; display: inline-block; padding-bottom: 5px; }
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
-    .contact-info p { margin-bottom: 1rem; color: #cbd5e1; }
-    .contact-info strong { color: #38bdf8; }
-    
-    .contact-form label { display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-size: 0.9rem; }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; color: #fff; border-radius: 4px; margin-bottom: 1rem; outline: none; }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: #38bdf8; }
-    .contact-form button { background: #0284c7; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.3s ease; }
-    .contact-form button:hover { background: #0369a1; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            /* Rich multi-layered background with subtle professional gradients and office texture */
+            background-image: 
+                linear-gradient(to bottom, rgba(5, 8, 15, 0.82), rgba(5, 8, 15, 0.96)),
+                url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-    footer { background: #0b1120; color: #64748b; text-align: center; padding: 2.5rem 1rem; margin-top: 5rem; border-top: 1px solid #1e293b; }
-    footer p { margin-bottom: 0.5rem; font-size: 0.9rem; }
-    footer a { color: #94a3b8; text-decoration: none; }
-    footer a:hover { color: #38bdf8; }
-  </style>
+        /* Active Office Working Environment Banner */
+        .office-banner {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            opacity: 0.4;
+            border-bottom: 2px solid var(--border-color);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(5, 8, 15, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            padding: 12rem 5% 5rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            flex-wrap: wrap;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card ul li {
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            word-break: break-word;
+        }
+
+        .hero-card ul li::before {
+            content: "▪";
+            color: var(--accent-gold);
+        }
+
+        section {
+            padding: 5rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .policy-section {
+            background: rgba(13, 19, 34, 0.75);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .policy-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .policy-box h3 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-box ul {
+            list-style: none;
+        }
+
+        .policy-box ul li {
+            margin-bottom: 0.9rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.4rem;
+        }
+
+        .policy-box ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .author-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .author-box h3 {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .author-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .author-btn {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.9rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .author-btn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .contact-section {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3.5rem 1.5rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-section h2 {
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .contact-section p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            padding: 0 1rem;
+        }
+
+        .email-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .email-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            word-break: break-all;
+        }
+
+        .email-btn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 9rem;
+                text-align: center;
+            }
+            .badge-box {
+                justify-content: center;
+            }
+            .hero-card {
+                text-align: left;
+            }
+            .policy-grid {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Ali Sovereign Insights Group</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="publishing.html">Publishing</a>
-      <a href="careers.html">Careers</a>
-      <a href="audits.html">Security Audits</a>
-      <a href="#contact">Contact Us</a>
-    </nav>
-    <a href="contact-direct.html">Direct Contact</a>
-  </header>
+    <!-- Active Office Workspace Banner Image -->
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" alt="Active Corporate Office Team Working" class="office-banner">
 
-  <section class="hero">
-    <h2>Strategic Insights, Publishing & Security Operations</h2>
-    <p>Empowering creators, enterprises, and professionals through lawful, structured corporate frameworks.</p>
-  </section>
+    <header>
+        <a href="#" class="logo">ASIG</a>
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#operations">Operations</a>
+            <a href="#requirements">Infrastructure</a>
+            <a href="#author">Author Profile</a>
+            <a href="#compliance">Compliance</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <div class="container">
-    <div class="badge-box">
-      <strong>Verified Enterprise:</strong> Government Registered MSME Enterprise | Registration No: <code>UDYAM-UP-47-0061707</code>
-    </div>
-
-    <div class="services-grid">
-      <div class="card">
-        <h3>Publishing & KDP Services</h3>
-        <p>End-to-end editorial support, KDP metadata optimization, interior formatting, cover design, and global distribution management.</p>
-        <a href="publishing.html">Explore Publishing &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>Remote Associate Program</h3>
-        <p>Task-based remote opportunities for writers, client managers, and auditors with transparent stage-based revenue distribution.</p>
-        <a href="careers.html">Join As Associate &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>Corporate Integrity & Security Audits</h3>
-        <p>Authorized web vulnerability scans, security simulations, phishing risk assessments, and NDA compliance evaluations.</p>
-        <a href="audits.html">View Audit Solutions &rarr;</a>
-      </div>
-    </div>
-
-    <div class="contact-section" id="contact">
-      <h2>Get In Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p>Have a project inquiry, publishing manuscript, or security audit request? Reach out to our core operations desk.</p>
-          <p><strong>Official Email:</strong><br> aliarman64030@gmail.com</p>
-          <p><strong>Registration Status:</strong><br> Ministry of MSME Registered Enterprise</p>
-          <p><strong>Operational Hours:</strong><br> Monday – Saturday (10:00 AM – 6:00 PM IST)</p>
+    <section class="hero" id="overview">
+        <div class="hero-content">
+            <div class="badge-box">
+                <span>MSME Registered Enterprise</span> • <span>India</span>
+            </div>
+            <h1>Ali Sovereign Insights Group</h1>
+            <p>An elite management consultancy, strategic advisory, and independent intellectual publishing house. We drive structural innovation, systemic analysis, and high-level corporate governance.</p>
         </div>
-        <div class="contact-form">
-          <form action="https://formsubmit.co/aliarman64030@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://aliarman64030-hub.github.io/asig-official-website/index.html">
-
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-            <label for="email">Your Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="message">Message / Scope of Work</label>
-            <textarea id="message" name="message" rows="4" placeholder="Briefly describe your requirements..." required></textarea>
-
-            <button type="submit">Send Message</button>
-          </form>
+        <div class="hero-card">
+            <h3>Enterprise Credentials</h3>
+            <ul>
+                <li><strong>Entity Name:</strong> Ali Sovereign Insights Group (ASIG)</li>
+                <li><strong>Core Domain:</strong> Management Consultancy & Advisory</li>
+                <li><strong>Registration:</strong> Udyam Registered (MSME)</li>
+                <li><strong>Udyam Reg. No:</strong> UDYAM-UP-47-0061707</li>
+                <li><strong>Jurisdiction:</strong> Republic of India</li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2026 Ali Sovereign Insights Group (ASIG). All Rights Reserved.</p>
-    <p>Government Registered MSME Enterprise | Udyam Registration No: UDYAM-UP-47-0061707</p>
-    <p><a href="#contact">Contact Operations</a></p>
-  </footer>
+    <section id="operations">
+        <div class="section-title">
+            <p>Comprehensive Architecture</p>
+            <h2>Corporate Work & Operational Scope</h2>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" alt="Management Consultancy" class="card-img">
+                <div class="card-content">
+                    <h3>Management Consultancy</h3>
+                    <p>Providing cutting-edge advisory services on corporate strategy, operational streamlining, governance frameworks, and enterprise scaling models tailored for modern businesses.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Strategic Data Analysis" class="card-img">
+                <div class="card-content">
+                    <h3>Strategic Data Analysis</h3>
+                    <p>In-depth market research, risk assessment, macro-environmental scanning, and competitive intelligence reporting to support critical executive decision-making.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=600&auto=format&fit=crop" alt="Government Tenders" class="card-img">
+                <div class="card-content">
+                    <h3>Government Tenders & Procurement</h3>
+                    <p>Active participation in institutional bidding and government procurement contracts (GeM and public sector channels) to deliver structured public advisory.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop" alt="Publishing" class="card-img">
+                <div class="card-content">
+                    <h3>Literary & Intellectual Publishing</h3>
+                    <p>Developing, editing, and self-publishing impactful non-fiction works, philosophical frameworks, sociological analyses, and literary manuscripts globally.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=600&auto=format&fit=crop" alt="Digital Infrastructure" class="card-img">
+                <div class="card-content">
+                    <h3>Digital Infrastructure Management</h3>
+                    <p>Overseeing high-security proprietary communication channels, digital asset distribution, metadata optimization, and secure remote enterprise coordination.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=600&auto=format&fit=crop" alt="Compliance" class="card-img">
+                <div class="card-content">
+                    <h3>Policy & Governance Compliance</h3>
+                    <p>Ensuring complete regulatory adherence across state and national frameworks, maintaining pristine audit trails, and executing rigorous internal compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="policy-section" id="requirements">
+        <div class="section-title" style="padding-top: 2rem;">
+            <p>Standards & Protocols</p>
+            <h2>Infrastructure & Strict Policy Guidelines</h2>
+        </div>
+        <div class="policy-grid">
+            <div class="policy-box">
+                <h3>Mandatory Infrastructure</h3>
+                <ul>
+                    <li><strong>Dedicated Hardware:</strong> Every core contributor and operational unit must possess a fully functional, secured Laptop and Mobile device.</li>
+                    <li><strong>Real-Time Connectivity:</strong> Continuous availability for emergency strategic reviews, task dispatches, and secure correspondence.</li>
+                    <li><strong>Asset Isolation:</strong> Dedicated personal computing environments utilized exclusively for high-integrity ASIG operations.</li>
+                </ul>
+            </div>
+            <div class="policy-box">
+                <h3>Strict Operational Protocols</h3>
+                <ul>
+                    <li><strong>Zero-Tolerance Security:</strong> Absolute confidentiality regarding proprietary insights, client drafts, and strategic data.</li>
+                    <li><strong>Decentralized Execution:</strong> Streamlined task execution where work can be dispatched via digital networks or direct institutional tendering.</li>
+                    <li><strong>Uncompromising Standards:</strong> Zero tolerance for casual errors or substandard outputs across consulting and publishing streams.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="author">
+        <div class="section-title">
+            <p>Authorial Portfolio</p>
+            <h2>Official Amazon Author Profile</h2>
+        </div>
+        <div class="author-box">
+            <h3>Explore Published Works</h3>
+            <p>Discover independent non-fiction titles, philosophical treatises, and sociological analyses authored by Arman Ali and published under global distribution frameworks.</p>
+            <a href="https://www.amazon.com/author/armanali" target="_blank" class="author-btn">Visit Amazon Author Profile</a>
+        </div>
+    </section>
+
+    <section id="compliance">
+        <div class="section-title">
+            <p>Legal Transparency</p>
+            <h2>Enterprise Compliance & Certification</h2>
+        </div>
+        <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="card-content">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-gold);">Ministry of MSME Verification</h3>
+                <p style="margin-bottom: 1.5rem;">Ali Sovereign Insights Group operates under legal framework compliance with its official Udyam Registration Number:</p>
+                <div style="font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; color: #ffffff; letter-spacing: 2px; background: rgba(197, 160, 89, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    UDYAM-UP-47-0061707
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-section">
+            <h2>Direct Official Communication</h2>
+            <p>No intermediary forms or clutter. Reach out directly through our verified official corporate email addresses for consultancy, institutional collaboration, or strategic inquiries.</p>
+            <div class="email-links">
+                <a href="mailto:aliarman64030@gmail.com" class="email-btn">aliarman64030@gmail.com</a>
+                <a href="mailto:aglbacshhussen@gmail.com" class="email-btn">aglbacshhussen@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ali Sovereign Insights Group (ASIG). All Rights Reserved. Reg. MSME India.
+Founder/CEO: MD ARMAN ALI</p>
+    </footer>
 
 </body>
 </html>
