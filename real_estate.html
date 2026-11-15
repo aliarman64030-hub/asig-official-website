@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIG - Luxury Real Estate</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #f4f4f4;
+        }
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid #d4af37;
+        }
+        h1 { font-size: 2.5rem; color: #d4af37; letter-spacing: 1px; }
+        p.subtitle { font-size: 1.1rem; color: #ccc; margin-top: 10px; }
+        .container { max-width: 1000px; margin: 50px auto; padding: 20px; }
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .property-card {
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .property-card:hover { transform: translateY(-5px); border-color: #d4af37; }
+        .property-info { padding: 20px; }
+        .property-info h3 { color: #d4af37; margin-bottom: 10px; }
+        .property-info p { color: #aaa; font-size: 0.95rem; margin-bottom: 15px; }
+        .btn-gold {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #d4af37;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .btn-gold:hover { background: #fff; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ASIG REAL ESTATE PORTFOLIO</h1>
+        <p class="subtitle">Exclusive Commercial & Luxury Properties</p>
+    </header>
+    <div class="container">
+        <div class="property-grid">
+            <div class="property-card">
+                <div class="property-info">
+                    <h3>Sovereign Elite Towers</h3>
+                    <p>Prime commercial spaces designed for corporate headquarters and high-end enterprises.</p>
+                    <a href="#" class="btn-gold">View Listings</a>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-info">
+                    <h3>Prime Residential Estates</h3>
+                    <p>Unmatched luxury villas and penthouses built with elite architectural standards.</p>
+                    <a href="#" class="btn-gold">View Listings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
